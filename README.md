@@ -90,13 +90,15 @@ Because CTC-CRF operator is based on CUDA Toolkit, so you should setting CUDA en
      If you need change your acoustic mode. I suggest you using  replace `pythons3 setup.py install` with `python3 setup.py develop`.
      
      
-        ```shell
+     ```shell
      # Install Asr Toolkit  
      cd cat_tensorflow
      python3 ./setup.py install
-        ```
+     ```
 
 ## Usage
+
+### Data preparation
 
 First of all, you need prepare three files include audio path, text number and weight, they all using Kaldi script-file format (`${UUID} ${context}`). You can refer to `egs/test/data`.
 
@@ -190,6 +192,8 @@ parameter = {
 
 When calling training and testing scripts, you can also set the number of processes and queues for data capture according to the configuration of the CPU, and the visible GPU indexs for calculate parallel according to the configuration of the GPU.
 
+### Model training
+
 Here is an training exmaple (`egs/test/train.sh`).
 
 ```shell
@@ -201,6 +205,8 @@ python3 -m cat_tensorflow.train \
   --batch_size 8 \
   --GPU_settings "2,3" \
 ```
+
+### Model Testing
 
 The purpose of the testing script is to save the results of the logistic result. It's easy to apply language model to test the WER (word error rate).
 
