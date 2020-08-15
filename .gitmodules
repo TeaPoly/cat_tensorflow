@@ -1,0 +1,3 @@
+[submodule "warp-ctc-crf"]
+	path = warp-ctc-crf
+	url = https://github.com/TeaPoly/warp-ctc-crf.git
