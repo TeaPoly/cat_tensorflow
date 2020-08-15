@@ -90,11 +90,11 @@ Because CTC-CRF operator is based on CUDA Toolkit, so you should setting CUDA en
      If you need change your acoustic mode. I suggest you using  replace `pythons3 setup.py install` with `python3 setup.py develop`.
      
      
-        ```shell
+     ```shell
      # Install Asr Toolkit  
      cd cat_tensorflow
      python3 ./setup.py install
-        ```
+     ```
 
 ## Usage
 
