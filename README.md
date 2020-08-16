@@ -60,7 +60,7 @@ Because CTC-CRF operator is based on CUDA Toolkit, so you should setting CUDA en
 
    setting your `TENSORFLOW_SRC_PATH` and `OPENFST`.
 
-   NOTE: This is an example, please don't simply copy to your terminal:
+   NOTE: This is an example, please don't copy to your terminal:
 
    ```shell
    # Create a symlink libtensorflow_framework.so.1 which references the original file  libtensorflow_framework.so
@@ -87,7 +87,7 @@ Because CTC-CRF operator is based on CUDA Toolkit, so you should setting CUDA en
 
 5. Install `cat_tensorflow` Asr Toolkit
 
-     If you need change your acoustic mode. I suggest you using  replace `pythons3 setup.py install` with `python3 setup.py develop`.
+     I using Conv2d->BiLstm as default acoustic model, if you wanna using your owner acoustic model. I suggest you replace `pythons3 setup.py install` with `python3 setup.py develop`.
      
      
      ```shell
@@ -102,7 +102,7 @@ Because CTC-CRF operator is based on CUDA Toolkit, so you should setting CUDA en
 
 First of all, you need prepare three files include audio path, text number and weight, they all using Kaldi script-file format (`${UUID} ${context}`). You can refer to `egs/test/data`.
 
-And then you need change the configure file. I using python file for parameter setting.
+And then you need change the configure file. I using python file as parameter setting.
 
 The configuration file (`egs/test/config.py`) consists of three parts, namely basic settings, data path configuration, and model configuration. This is an template below:
 
@@ -190,7 +190,7 @@ parameter = {
 }
 ```
 
-When calling training and testing scripts, you can also set the number of processes and queues for data capture according to the configuration of the CPU, and the visible GPU indexs for calculate parallel according to the configuration of the GPU.
+When calling training and testing scripts, you can also set the number of processes and queues for data capture, according to the configuration of the CPU. You can set the visible GPU indexs for calculate parallel, according to the configuration of the GPU.
 
 ### Model training
 
