@@ -233,7 +233,7 @@ python3 -m cat_tensorflow.eval \
 All scripts file in the `egs/test` directory.
 
 ## Todo
-- [ ] Save and load global mean std file.
+- [ ] Using Feature and CMVN ark file created by Kaldi.
 - [ ] Add script file for Aishell task.
 
 ## Lisense
