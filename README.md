@@ -206,6 +206,12 @@ python3 -m cat_tensorflow.train \
   --GPU_settings "2,3" \
 ```
 
+For tracking and visualizing metrics such as loss:
+
+```shell
+tensorboard --log_dir /tmp/crf_exp/summary
+```
+
 ### Model Testing
 
 The purpose of the testing script is to save the results of the logistic result. It's easy to apply language model to test the WER (word error rate).
@@ -225,6 +231,10 @@ python3 -m cat_tensorflow.eval \
 ```
 
 All scripts file in the `egs/test` directory.
+
+## Todo
+- [ ] Save and load global mean std file.
+- [ ] Add script file for Aishell task.
 
 ## Lisense
 Copyright © 2020 huanglk
