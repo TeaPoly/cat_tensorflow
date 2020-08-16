@@ -158,7 +158,7 @@ def create_basiclstm(fingerprint_input, dropout_prob, architecture_parameter, se
             ###################
             # CMVN
             ###################
-            outputs = tf.layers.batch_normalization(fingerprint_input, training=is_training, trainable=trainable)
+            outputs = tf.contrib.layers.batch_norm(fingerprint_input, is_training=is_training, trainable=trainable)
         else:
             outputs = fingerprint_input
 

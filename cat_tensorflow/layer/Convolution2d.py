@@ -51,7 +51,7 @@ def Convolution2d(
                       #  lambda: net)
 
     # Batch Normalization.
-    net = tf.layers.batch_normalization(net, training=is_training, trainable=trainable)
+    net = tf.contrib.layers.batch_norm(net, is_training=is_training, trainable=trainable)
 
     seq_len = tf.cast(
         tf.ceil(seq_len/time_stride), tf.int32)

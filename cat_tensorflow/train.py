@@ -372,7 +372,7 @@ def main(_):
                 # Superimposed counter.
                 train_interval_steps += 1
 
-                logger.debug('Epochs-Steps: #%d-%d, progress (%d/%d), learing rate: %f, training loss: %.6e, duration: %f' %
+                logger.debug('Epochs-Steps: #%d-%d, progress (%d/%d), learing rate: %f, training loss: %.4f, duration: %f' %
                              (epoch, train_total_steps, train_interval_steps, training_audio_processor.total_steps,
                                  learning_rate_value, train_step_loss, cos_duration))
 
@@ -425,7 +425,7 @@ def main(_):
                         valid_final_loss += (valid_step_loss *
                                              FLAGS.batch_size) / valid_set_size
 
-                        logger.debug('\tvalid step : %d/%d, loss: %.6e' %
+                        logger.debug('\tvalid step : %d/%d, loss: %.4f' %
                                      (valid_interval_steps, validation_audio_processor.total_steps, valid_step_loss))
 
                     validation_audio_processor.stop()
@@ -437,13 +437,13 @@ def main(_):
                     timestamp = datetime.datetime.now()
 
                     # training logger
-                    logging_string = '%s: train step: #%d, loss: %.6e' % (
+                    logging_string = '%s: train step: #%d, loss: %.4f' % (
                         timestamp, train_total_steps, train_final_loss)
                     train_final_loss = 0
                     logger.info(logging_string)
 
                     # validation logger
-                    logging_string = '%s: valid step: #%d, loss: %.6e (N=%d)' % (
+                    logging_string = '%s: valid step: #%d, loss: %.4f (N=%d)' % (
                         timestamp, train_total_steps, valid_final_loss, valid_set_size)
 
                     logger.info(logging_string)
